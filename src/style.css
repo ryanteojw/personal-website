@@ -1,0 +1,370 @@
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Merienda:wght@300..900&display=swap');
+
+/* font */
+:root {
+    --nav-font: 'Merienda', cursive;
+    --body-font: 'Fira Code', monospace;
+}
+
+/* color */
+:root {
+    --first-color: #4070F4;
+    --second-color: #0E2431;
+}
+
+/* base */
+*, ::before, ::after{
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+}
+
+nav {
+    font-family: var(--nav-font);
+    color: var(--second-color);
+}
+
+body {
+    font-family: var(--body-font);
+    color: var(--second-color);
+    overflow-x: hidden;
+}
+
+h1, h2 {
+    margin: 0;
+    color: #ffffff;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* section css */
+section {
+    transition: background-color 0.5s ease, color 0.5s ease;
+    min-height: 80vh;
+}
+
+/* swiper */
+.swiper {
+    overflow: visible;
+}
+
+.swiper-container {
+    overflow: hidden;
+}
+
+/* navbar */
+.navbar {
+    padding: 0.75rem 2rem;
+}
+
+/* hamburger overlay style */
+.overlay {
+    position: fixed;
+    top: 0;
+    right: -33.33%; 
+    width: 33.33%;
+    height: 100%;
+    background-color: rgba(33, 37, 41, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding-top: 3.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    transition: right 0.3s ease;
+    z-index: 1050;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.overlay.active {
+    right: 0;
+}
+
+.overlay-nav {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin: 0;
+}
+
+.overlay-nav li {
+    margin: 1.5rem 0;
+}
+
+.overlay-nav a {
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    display: inline;
+    transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+.overlay-nav a:hover {
+    color: #f0a500;
+}
+
+.overlay-nav a:active {
+    color: #f0a500;
+    font-weight: bold;
+}
+
+/* about section */
+#about {
+    background: url("./asset/bg_1.png");
+    background-size: cover;
+    background-position: center center;
+    color: #ffffff;
+    height: 100vh;
+    padding: 2.5rem 1.5rem;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.about-data {
+    align-self: center;
+}
+
+.about-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 1.5rem;
+}
+
+.about-title-color {
+    color: var(--first-color);
+}
+
+.about-social {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.about-social {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.about-social-icon {
+    width: max-content;
+    margin-bottom: 1rem;
+    font-size: clamp(2rem, 5vw, 2.5rem);
+}
+
+.about-social-icon:hover {
+    transition: 0.3s ease;
+    transform: scale(1.4);
+}
+
+.about-img img {
+    width: 295px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+  .about-content {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .about-data {
+    margin-top: 5rem;
+    flex: 3;
+    text-align: left;
+  }
+  .about-social {
+    justify-content: flex-start;
+  }
+  .about-img {
+    margin-top: 5rem;
+    flex: 1.5;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* experiences section */
+#experiences {
+    background: url("./asset/bg_2.png");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.experiences-card {
+    height: 300px !important;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.experiences-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    outline: 1px solid #000000;
+}
+
+.project-card:hover, .cert-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    outline: 2px solid #000000;
+}
+
+.overlayPrompt {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 0.9rem;
+    pointer-events: none;
+}
+
+.experiences-card:hover .overlayPrompt {
+    opacity: 1;
+}
+
+/* projects section */
+#projects {
+    background: url("./asset/bg_1.png");
+    background-size: cover;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.project-card:hover .overlayPrompt {
+    opacity: 1;
+}
+
+/* skills section */
+#skills {
+    background: url("./asset/bg_2.png");
+    background-size: cover;
+    background-position: center center;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.skill-card {
+    width: 200px;
+    height: 200px;
+    border: 2px solid #007BFF;
+    border-radius: 1rem;
+    background-color: #f8f9fa;
+    padding: 10px;
+    gap: 10px;
+}
+
+.skill-image {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.skill-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.skills-swiper {
+    width: 100%;
+    padding: 1rem 0;
+}
+
+/* cert section */
+#certificates {
+    background: url("./asset/bg_1.png");
+    background-size: cover;
+    background-position: right bottom;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.cert-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.cert-card:hover .overlayPrompt {
+    opacity: 1;
+}
+
+/* media styles */
+@media (max-width: 768px) {
+    .overlay {
+        width: 50%;
+        right: -50%;
+    }
+    #experiences {
+        min-height: auto;
+    }
+    #projects {
+        min-height: auto;
+    }
+    #skills {
+        min-height: auto;
+    }
+    #certificates {
+        min-height: auto;
+    }
+}
